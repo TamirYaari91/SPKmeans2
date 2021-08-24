@@ -296,7 +296,12 @@ static PyMethodDef capiMethods[] = {
 
 
 static struct PyModuleDef moduleDef = {
-        PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods};
+        PyModuleDef_HEAD_INIT,
+        "myspkmeans",
+        NULL,
+        -1,
+        capiMethods
+} PyModuleDef; /*???*/
 
 
 /*
@@ -305,6 +310,7 @@ static struct PyModuleDef moduleDef = {
  * what we wrote in struct PyModuleDef.
  * This should be the only non-static item defined in the module file
  */
+
 PyMODINIT_FUNC
 PyInit_myspkmeans(void) {
     return PyModule_Create(&moduleDef);
