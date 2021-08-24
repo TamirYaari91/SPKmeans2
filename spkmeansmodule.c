@@ -292,13 +292,11 @@ static PyMethodDef capiMethods[] = {
         { NULL, NULL, 0, NULL }     /* The last entry must be all NULL as shown to act as a
                                  sentinel. Python looks for this entry to know that all
                                  of the functions for the module have been defined. */
-}
-/*;*/
+};
 
 
 static struct PyModuleDef moduleDef = {
-        PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods}
-        /*;*/
+        PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods};
 
 
 /*
