@@ -25,15 +25,15 @@ static PyObject *fit(PyObject *, PyObject *);
 static PyObject *fit2(PyObject *, PyObject *);
 
 
-static PyMethodDef capiMethods[] = {{
+static PyMethodDef capiMethods[] = {
         FUNC(METH_VARARGS, fit, "first part"),
         FUNC(METH_VARARGS, fit2, "second part"),
-        {NULL, NULL, 0, NULL}}
+        {NULL, NULL, 0, NULL}
 };
 
 
-static struct PyModuleDef moduleDef = {{
-    PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods}};
+static struct PyModuleDef moduleDef = {
+        PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods};
 
 
 PyMODINIT_FUNC
