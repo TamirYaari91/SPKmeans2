@@ -16,69 +16,6 @@ int update_centroids2(int, int, double *, double *, int);
 
 int equal2(const double *, const double *, int);
 
-/*
-static PyObject *kmeans2(int, int, int, PyObject *, PyObject *, int, int);
-*/
-
-/*
-static PyObject *fit2(PyObject *self, PyObject *args);
-*/
-
-/*
-#define FUNC(_flag, _name, _docstring) { #_name, (PyCFunction)_name, _flag, PyDoc_STR(_docstring) }
-*/
-
-/*static PyObject *kmeans2(int k, int num_of_lines, int dim, PyObject *centroids_py,
-                        PyObject *points_to_cluster_py, int centroids_length, int points_to_cluster_length) {
-
-    double *centroids;
-    double *points_to_cluster;
-    int i, max_iter, changed, iters;
-    PyObject *list;
-
-    max_iter = 300;
-
-    if (centroids_length < 0 || points_to_cluster_length < 0) {
-        return NULL;
-    }
-
-    centroids = (double *) calloc(centroids_length, sizeof(double));
-    assert(centroids != NULL && "Problem in allocating centroids memory");
-
-    points_to_cluster = (double *) calloc(points_to_cluster_length, sizeof(double));
-    assert(points_to_cluster != NULL && "Problem in allocating points_to_cluster memory");
-
-    for (i = 0; i < centroids_length; i++) {
-        PyObject *item;
-        item = PyList_GetItem(centroids_py, i);
-        centroids[i] = PyFloat_AsDouble(item);
-    }
-    for (i = 0; i < points_to_cluster_length; i++) {
-        PyObject *item;
-        item = PyList_GetItem(points_to_cluster_py, i);
-        points_to_cluster[i] = PyFloat_AsDouble(item);
-    }
-
-    iters = 0;
-    while (1) {
-        for (i = 0; i < num_of_lines; ++i) {
-            set_cluster2(i, k, points_to_cluster, centroids, dim);
-        }
-        changed = update_centroids2(k, num_of_lines, points_to_cluster, centroids, dim);
-        iters++;
-        if (changed == 0 || iters == max_iter) {
-            break;
-        }
-    }
-
-    list = PyList_New(centroids_length);
-    for (i = 0; i < centroids_length; i++) {
-        PyList_SetItem(list, i, PyFloat_FromDouble(centroids[i]));
-    }
-    free(centroids);
-    free(points_to_cluster);
-    return list;
-}*/
 
 double distance2(const double *p, const double *centroids, int cluster, int dim) {
     double d;

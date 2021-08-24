@@ -11,8 +11,6 @@
 #include <python3.7/Python.h>
 */
 
-
-
 typedef struct {
     double value;
     double *vector;
