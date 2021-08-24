@@ -1,10 +1,10 @@
 #define PY_SSIZE_T_CLEAN  /* For all # variants of unit formats (s#, y#, etc.) use Py_ssize_t rather than int. */
-
+#include <Python.h>
 /*
 #include <python3.7/Python.h>
 */
 
-#include <Python.h>       /* MUST include <Python.h>, this implies inclusion of the following standard headers:
+             /* MUST include <Python.h>, this implies inclusion of the following standard headers:
                              <stdio.h>, <string.h>, <errno.h>, <limits.h>, <assert.h> and <stdlib.h> (if available). */
 #include <math.h>         /* include <Python.h> has to be before any standard headers are included */
 #include "spkmeans.h"
@@ -31,6 +31,9 @@ static PyObject *mat_to_Python_mat(double **mat, int, int); /*not sure if needs 
 static PyObject * kmeans2_py(int, int, int, PyObject *, PyObject *, int, int);
 
 static PyObject *spkmeans_Python(char *, char *, int, int);
+
+static PyObject *kmeans2(int, int, int, PyObject *,
+                         PyObject *, int, int);
 
 
 static PyObject *spkmeans_Python(char *filename, char *goal, int k, int source) { /*source == 0 -> C | source == 1 -> Python*/
