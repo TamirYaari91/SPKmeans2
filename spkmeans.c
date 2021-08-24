@@ -244,7 +244,7 @@ void print_mat(double **mat, int N, int dim) {
     int row, columns;
     for (row = 0; row < N; row++) {
         for (columns = 0; columns < dim; columns++) {
-            printf("%.4lf", mat[row][columns]);
+            printf("%.4f", mat[row][columns]);
             if (columns == dim - 1) {
                 printf("\n");
             } else {
@@ -258,7 +258,7 @@ void print_mat(double **mat, int N, int dim) {
 void print_row(double *row, int len) {
     int i;
     for (i = 0; i < len; i++) {
-        printf("%.4lf", row[i]);
+        printf("%.4f", row[i]);
         if (i != len - 1) {
             printf(",");
         }
