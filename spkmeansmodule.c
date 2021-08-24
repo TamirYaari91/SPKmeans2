@@ -26,14 +26,14 @@
  * A geometric series up to n. sum_up_to_n(z^n)
  */
 
-PyObject *mat_to_Python_mat(double **mat, int, int); /*not sure if needs to be static or not*/
+/*static PyObject *mat_to_Python_mat(double **mat, int, int); *//*not sure if needs to be static or not*//*
 
-PyObject * kmeans2_py(int, int, int, PyObject *, PyObject *, int, int);
+static PyObject * kmeans2_py(int, int, int, PyObject *, PyObject *, int, int);
 
-PyObject *spkmeans_Python(char *, char *, int, int);
+static PyObject *spkmeans_Python(char *, char *, int, int);*/
 
 
-PyObject *spkmeans_Python(char *filename, char *goal, int k, int source) { /*source == 0 -> C | source == 1 -> Python*/
+static PyObject *spkmeans_Python(char *filename, char *goal, int k, int source) { /*source == 0 -> C | source == 1 -> Python*/
     int i, N, dim;
     int *N_dim;
     double *eigenvalues;
@@ -155,7 +155,7 @@ PyObject *spkmeans_Python(char *filename, char *goal, int k, int source) { /*sou
         free(N_dim);
         return res;
     }
-}
+};
 
 static PyObject *kmeans2(int k, int num_of_lines, int dim, PyObject *centroids_py,
                          PyObject *points_to_cluster_py, int centroids_length, int points_to_cluster_length) {
@@ -210,13 +210,14 @@ static PyObject *kmeans2(int k, int num_of_lines, int dim, PyObject *centroids_p
 }
 
 
-PyObject * kmeans2_py(int k, int num_of_lines, int dim, PyObject *centroids_py,
+static PyObject * kmeans2_py(int k, int num_of_lines, int dim, PyObject *centroids_py,
                       PyObject *points_to_cluster_py, int centroids_length, int points_to_cluster_length) {
     return kmeans2(k, num_of_lines, dim, centroids_py,
-                   points_to_cluster_py, centroids_length, points_to_cluster_length);}
+                   points_to_cluster_py, centroids_length, points_to_cluster_length);
+};
 
 
-PyObject *mat_to_Python_mat(double **mat, int N, int dim) {
+static PyObject *mat_to_Python_mat(double **mat, int N, int dim) {
     Py_ssize_t i, j, rows, columns;
     PyObject *res;
 
@@ -231,7 +232,7 @@ PyObject *mat_to_Python_mat(double **mat, int N, int dim) {
         PyList_SET_ITEM(res, i, item);
     }
     return res;
-}
+};
 
 /*
  * This actually defines the geo function using a wrapper C API function
@@ -301,7 +302,7 @@ static struct PyModuleDef moduleDef = {
         NULL,
         -1,
         capiMethods
-} PyModuleDef; /*???*/
+};
 
 
 /*
