@@ -18,7 +18,7 @@
 #include <python3.7/Python.h>
 */
 
-#define eps 0.001
+#define eps pow(10,-15)
 
 /*
 What's left?
