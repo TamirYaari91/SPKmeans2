@@ -26,11 +26,11 @@
  * A geometric series up to n. sum_up_to_n(z^n)
  */
 
-/*static PyObject *mat_to_Python_mat(double **mat, int, int); *//*not sure if needs to be static or not*//*
+static PyObject *mat_to_Python_mat(double **mat, int, int); /*not sure if needs to be static or not*/
 
 static PyObject * kmeans2_py(int, int, int, PyObject *, PyObject *, int, int);
 
-static PyObject *spkmeans_Python(char *, char *, int, int);*/
+static PyObject *spkmeans_Python(char *, char *, int, int);
 
 
 static PyObject *spkmeans_Python(char *filename, char *goal, int k, int source) { /*source == 0 -> C | source == 1 -> Python*/
