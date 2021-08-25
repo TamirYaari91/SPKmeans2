@@ -11,7 +11,7 @@
 #define FUNC(_flag, _name, _docstring) { #_name, (PyCFunction)_name, _flag, PyDoc_STR(_docstring) }
 
 
-static PyObject *mat_to_Python_mat(double **mat, int, int); not sure if needs to be static or not
+static PyObject *mat_to_Python_mat(double **mat, int, int); /*not sure if needs to be static or not*/
 
 static PyObject *kmeans2_py(int, int, int, PyObject *, PyObject *, int, int);
 
@@ -32,8 +32,8 @@ static PyMethodDef capiMethods[] = {
 };
 
 
-static struct PyModuleDef moduleDef = {
-        PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods};
+/*static struct PyModuleDef moduleDef = {
+        PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods};*/
 
 
 /*PyMODINIT_FUNC
