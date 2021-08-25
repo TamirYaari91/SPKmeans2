@@ -32,19 +32,19 @@ static PyMethodDef capiMethods[] = {
 };
 
 
-/*static struct PyModuleDef moduleDef = {
-        PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods};*/
+static struct PyModuleDef moduleDef = {
+        PyModuleDef_HEAD_INIT, "myspkmeans", NULL, -1, capiMethods};
 
-
-/*PyMODINIT_FUNC
-PyInit_myspkmeans(void) {
-    return PyModule_Create(&moduleDef);
-}*/
 
 PyMODINIT_FUNC
+PyInit_myspkmeans(void) {
+    return PyModule_Create(&moduleDef);
+}
+
+/*PyMODINIT_FUNC
 initmyspkmeans(void) {
     Py_InitModule3("myspkmeans",capiMethods,"bla");
-}
+}*/
 
 static PyObject * spkmeans_Python(char *filename, char *goal, int k, int source) { /*source == 0 -> C | source == 1 -> Python*/
     int i, N, dim;
